@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+*.db
+*.db-journal
+data/wardrobe.db*
+public/uploads/
+.env
+.env.local
+.DS_Store
