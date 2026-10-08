@@ -1,0 +1,603 @@
+[
+ {
+  "name": "A New Day Strapless Wide-Leg Jumpsuit - Black",
+  "category": "other",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Strapless solid-black jumpsuit with wide-leg cut.",
+  "image": "/seed/a-new-day-jumpsuit-ghost.jpg"
+ },
+ {
+  "name": "Mesh Boat Neck Floral Ruched Long Sleeve Maxi Dress - Black (Cider)",
+  "category": "dresses",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "fall"
+  ],
+  "notes": "Sheer mesh maxi with boat neck, long sleeves, ruched waist and black floral pattern.",
+  "image": "/seed/cider-29-ghost-final.jpg"
+ },
+ {
+  "name": "Shaping Polka Dot One Piece Swimsuit - White (Cider)",
+  "category": "other",
+  "color": "white",
+  "seasons": [
+   "summer"
+  ],
+  "notes": "White one-piece with thin spaghetti straps and all-over black polka dot pattern.",
+  "image": "/seed/cider-12-ghost-final.jpg"
+ },
+ {
+  "name": "High Waist Solid Pleated Maxi Skirt - Beige (Cider)",
+  "category": "bottoms",
+  "color": "beige",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Solid beige with flared maxi-length A-line silhouette.",
+  "image": "/seed/cider-26-ghost-final.jpg"
+ },
+ {
+  "name": "Denim V-neck Button Vest - Denim (Cider)",
+  "category": "tops",
+  "color": "dark blue",
+  "seasons": [
+   "spring",
+   "summer",
+   "fall"
+  ],
+  "notes": "Sleeveless denim vest with V-neckline and four front buttons.",
+  "image": "/seed/cider-36-ghost-final.jpg"
+ },
+ {
+  "name": "Texture Ruched Top and Knotted Straight Leg Trousers Set - Beige (Cider)",
+  "category": "other",
+  "color": "beige",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Two-piece set with textured crinkle fabric, cap-sleeve top and drawstring straight-leg trousers.",
+  "image": "/seed/cider-16-ghost-final.jpg"
+ },
+ {
+  "name": "Rib Knit Stand Neck Solid Long Sleeve Top - Brown (Cider)",
+  "category": "tops",
+  "color": "brown",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Fitted solid top with visible rib-knit texture, stand neck and long sleeves.",
+  "image": "/seed/cider-23-ghost-final.jpg"
+ },
+ {
+  "name": "Stand Collar Ruched Long Sleeve Tee - Carmine (Cider)",
+  "category": "tops",
+  "color": "carmine",
+  "seasons": [
+   "fall",
+   "winter",
+   "spring"
+  ],
+  "notes": "Stand collar with ruched draping across shoulder and torso, fitted long sleeves.",
+  "image": "/seed/cider-35-ghost-final.jpg"
+ },
+ {
+  "name": "Cool Faux Leather Jacket - Black (Cider)",
+  "category": "outerwear",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "fall",
+   "winter"
+  ],
+  "notes": "Relaxed-fit collared jacket with button front and patch pockets in smooth leather-look material.",
+  "image": "/seed/cider-39-ghost-final.jpg"
+ },
+ {
+  "name": "Round Neck Knitted Long Sleeve Sweater - Grey (Cider)",
+  "category": "tops",
+  "color": "grey",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Textured knit with round neckline and long sleeves.",
+  "image": "/seed/cider-20-ghost-final.jpg"
+ },
+ {
+  "name": "V-neck Floral Embroidery Tie Front Bow Short Sleeve Blouse - Beige (Cider)",
+  "category": "tops",
+  "color": "beige",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Short puff sleeves, deep V-neck with front tie bows and scattered small floral embroidery.",
+  "image": "/seed/cider-13-ghost-final.jpg"
+ },
+ {
+  "name": "Round Neck Knitted Long Sleeve Sweater - White (Cider)",
+  "category": "tops",
+  "color": "white",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Plain knit with round neckline and ribbed cuffs and hem.",
+  "image": "/seed/cider-18-ghost-final.jpg"
+ },
+ {
+  "name": "Shaping Geometric Knotted Cut Out One Piece Swimsuit - Multicolor (Cider)",
+  "category": "other",
+  "color": "green",
+  "seasons": [
+   "summer"
+  ],
+  "notes": "Thin-strap one-piece with front knot tie and keyhole cutout in green geometric floral print.",
+  "image": "/seed/cider-11-ghost-final.jpg"
+ },
+ {
+  "name": "Halter V-Neck Knotted Floral Embroidery Top - Black (Cider)",
+  "category": "tops",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Black cropped halter top with pink floral embroidery and front buttons.",
+  "image": "/seed/cider-08-ghost-final.jpg"
+ },
+ {
+  "name": "Uniqlo Women's Mini T-Shirt (Light blue)",
+  "category": "tops",
+  "color": "light blue",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Solid pattern with short sleeves, round crew neckline and cropped straight cut.",
+  "image": "/seed/uniqlo-mini-tee-lightblue-ghost.jpg"
+ },
+ {
+  "name": "Uniqlo Women's Mini T-Shirt (White)",
+  "category": "tops",
+  "color": "white",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Solid white with short sleeves, crew neckline and fitted cropped cut.",
+  "image": "/seed/uniqlo-mini-tee-white-ghost.jpg"
+ },
+ {
+  "name": "Uniqlo Women's Mini T-Shirt (Navy)",
+  "category": "tops",
+  "color": "navy",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Short-sleeve crewneck tee with fitted cut in solid navy.",
+  "image": "/seed/uniqlo-mini-tee-navy-ghost.jpg"
+ },
+ {
+  "name": "Uniqlo Women's Mini T-Shirt (Black)",
+  "category": "tops",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Short-sleeve crewneck in solid black with fitted cut.",
+  "image": "/seed/uniqlo-mini-tee-black-ghost.jpg"
+ },
+ {
+  "name": "Uniqlo Women's Mini T-Shirt (Butter yellow)",
+  "category": "tops",
+  "color": "butter yellow",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Short-sleeve fitted cut with round crew neckline in solid color.",
+  "image": "/seed/uniqlo-mini-tee-butteryellow-ghost.jpg"
+ },
+ {
+  "name": "Solid Texture Slit Midi Skirt - Black (Cider)",
+  "category": "bottoms",
+  "color": "black",
+  "seasons": [
+   "all-season"
+  ],
+  "notes": "Solid black midi skirt with textured finish and side slit.",
+  "image": "/seed/cider-40.jpg"
+ },
+ {
+  "name": "Solid Knit Polo Zipper Cardigan - Grey (Cider)",
+  "category": "tops",
+  "color": "grey",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Cropped cut with ribbed knit texture, polo collar and full front zipper.",
+  "image": "/seed/cider-37.jpg"
+ },
+ {
+  "name": "Solid Stitch Straight Leg Trousers - Black (Cider)",
+  "category": "bottoms",
+  "color": "black",
+  "seasons": [
+   "all-season"
+  ],
+  "notes": "High-waisted straight-leg cut with front crease stitching in solid black.",
+  "image": "/seed/cider-38.jpg"
+ },
+ {
+  "name": "High Waist Pocket Straight Leg Trousers - Grey (Cider)",
+  "category": "bottoms",
+  "color": "grey",
+  "seasons": [
+   "spring",
+   "summer",
+   "fall"
+  ],
+  "notes": "High-waist straight-leg cut with large flap cargo pockets and side ruching with drawstrings.",
+  "image": "/seed/cider-32.jpg"
+ },
+ {
+  "name": "Knit Asymmetrical One Shoulder Maxi Dress - Black (Cider)",
+  "category": "dresses",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "One-shoulder sleeveless knit with black and white abstract wave pattern in fitted maxi length.",
+  "image": "/seed/cider-34.jpg"
+ },
+ {
+  "name": "Mesh One Shoulder Ruffle Trim Long Sleeve Top - Grey (Cider)",
+  "category": "tops",
+  "color": "grey",
+  "seasons": [
+   "spring",
+   "summer",
+   "fall"
+  ],
+  "notes": "Sheer mesh with one-shoulder cut, ruched body and abstract tonal pattern.",
+  "image": "/seed/cider-31.jpg"
+ },
+ {
+  "name": "Tweed Mid Waist Solid Button Wide Leg Trousers - Black (Cider)",
+  "category": "bottoms",
+  "color": "black",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Wide-leg cut in textured black tweed with button-trimmed front pockets.",
+  "image": "/seed/cider-33.jpg"
+ },
+ {
+  "name": "Cotton-blend V-neck Split Long Sleeve Top - Black (Cider)",
+  "category": "tops",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "fall",
+   "winter"
+  ],
+  "notes": "Ribbed knit with V-neck, two gold-tone buttons and split front hem.",
+  "image": "/seed/cider-27.jpg"
+ },
+ {
+  "name": "Linen-blend Mid Rise Solid Midi Skirt With Belt - Coffee (Cider)",
+  "category": "bottoms",
+  "color": "dark brown",
+  "seasons": [
+   "spring",
+   "summer",
+   "fall"
+  ],
+  "notes": "Straight solid midi skirt with thin belt and gold-tone buckle at waist.",
+  "image": "/seed/cider-28.jpg"
+ },
+ {
+  "name": "Knit Asymmetrical Neck Solid Long Sleeve Top - Beige (Cider)",
+  "category": "tops",
+  "color": "beige",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Lightweight knit with asymmetrical high neckline and angled hem.",
+  "image": "/seed/cider-24.jpg"
+ },
+ {
+  "name": "Boat Neck Solid Ruched Long Sleeve Tee - White (Cider)",
+  "category": "tops",
+  "color": "white",
+  "seasons": [
+   "spring",
+   "fall",
+   "winter"
+  ],
+  "notes": "Ribbed knit with boat neckline, ruched sides and flared long sleeves.",
+  "image": "/seed/cider-21.jpg"
+ },
+ {
+  "name": "Boat Neck Bowknot Ruched Long Sleeve Top - Black (Cider)",
+  "category": "tops",
+  "color": "black",
+  "seasons": [
+   "spring",
+   "fall",
+   "winter"
+  ],
+  "notes": "Boat neckline with bowknot shoulder ties, long flared sleeves and ruched waist.",
+  "image": "/seed/cider-25.jpg"
+ },
+ {
+  "name": "Denim High Waist Cargo Mini Skirt - Carbon (Cider)",
+  "category": "bottoms",
+  "color": "washed black",
+  "seasons": [
+   "spring",
+   "summer",
+   "fall"
+  ],
+  "notes": "High-waist denim mini with flap cargo pockets on sides.",
+  "image": "/seed/cider-30.jpg"
+ },
+ {
+  "name": "Satin Cowl Neck Solid Ruffle Hem Maxi Dress - Pink (Cider)",
+  "category": "dresses",
+  "color": "light pink",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Sleeveless maxi with cowl neckline and ruffle trim along straps and sides, solid satin-like sheen.",
+  "image": "/seed/cider-22.jpg"
+ },
+ {
+  "name": "Wool-blend Collar Zipper Cardigan - Khaki (Cider)",
+  "category": "tops",
+  "color": "khaki",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Full-zip knit cardigan with folded collar and ribbed cuffs and hem.",
+  "image": "/seed/cider-19.jpg"
+ },
+ {
+  "name": "V-neck Puff Sleeve Polka Dot Knotted Mini Dress - Brown (Cider)",
+  "category": "dresses",
+  "color": "brown",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Brown with white polka dots, V-neck with front tie and short puff sleeves.",
+  "image": "/seed/cider-14.jpg"
+ },
+ {
+  "name": "Adjustable Strap Heeled Sandals - Coffee (Cider)",
+  "category": "shoes",
+  "color": "dark brown",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Thin strappy open-toe sandals with low stiletto heel and gold-tone adjustable buckles.",
+  "image": "/seed/cider-15.jpg"
+ },
+ {
+  "name": "Faux Patent Leather Kitten Heeled Mules - Red (Cider)",
+  "category": "shoes",
+  "color": "red",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Glossy patent-look finish with open toe, single wide strap, and low kitten heel.",
+  "image": "/seed/cider-17.jpg"
+ },
+ {
+  "name": "Boat Neck Ruched Asymmetrical Hem Tee - Dark Navy (Cider)",
+  "category": "tops",
+  "color": "dark navy",
+  "seasons": [
+   "spring",
+   "fall",
+   "winter"
+  ],
+  "notes": "Long sleeves with boat neckline, ruched waist and asymmetrical hem.",
+  "image": "/seed/cider-04.jpg"
+ },
+ {
+  "name": "Denim Polo Neck Zip Through Blouse - Navy Blue (Cider)",
+  "category": "tops",
+  "color": "navy blue",
+  "seasons": [
+   "spring",
+   "summer",
+   "fall"
+  ],
+  "notes": "Fitted denim top with polo collar, cap sleeves and full front zip.",
+  "image": "/seed/cider-07.jpg"
+ },
+ {
+  "name": "Boat Neck Stripe Knotted Bell Sleeve Blouse - Navy Blue (Cider)",
+  "category": "tops",
+  "color": "navy blue",
+  "seasons": [
+   "spring",
+   "fall"
+  ],
+  "notes": "Pinstripe pattern with boat neckline, bell sleeves and side knot detail.",
+  "image": "/seed/cider-03.jpg"
+ },
+ {
+  "name": "Knit Boat Neck Asymmetrical Hem Split Long Sleeve Top - Wine (Cider)",
+  "category": "tops",
+  "color": "wine",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Solid knit with boat neckline and asymmetrical hem with side split.",
+  "image": "/seed/cider-02.jpg"
+ },
+ {
+  "name": "Sweetheart Ruffle Knotted Maxi Dress - Yellow (Cider)",
+  "category": "dresses",
+  "color": "yellow",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Sleeveless fitted maxi with V-neckline, ruffle trim and front tie knot in solid color.",
+  "image": "/seed/cider-09.jpg"
+ },
+ {
+  "name": "Satin Sculptural Square Neck Ruched Mermaid Maxi Dress - Purple Fig (Cider)",
+  "category": "dresses",
+  "color": "dark plum purple",
+  "seasons": [
+   "spring",
+   "summer",
+   "fall"
+  ],
+  "notes": "Sleeveless maxi with square neckline, ruched bodice and smooth satin-like sheen.",
+  "image": "/seed/cider-06.jpg"
+ },
+ {
+  "name": "Satin High Neck Bell Sleeve Button Blouse - Dark Navy (Cider)",
+  "category": "tops",
+  "color": "dark navy",
+  "seasons": [
+   "fall",
+   "winter",
+   "spring"
+  ],
+  "notes": "Solid satin-sheen blouse with high neckline and flared bell sleeves.",
+  "image": "/seed/cider-01.jpg"
+ },
+ {
+  "name": "Satin Boat Neck Bell Sleeve Blouse - Brown (Cider)",
+  "category": "tops",
+  "color": "brown",
+  "seasons": [
+   "spring",
+   "fall",
+   "winter"
+  ],
+  "notes": "Solid brown top with wide boat neckline and long flared bell sleeves.",
+  "image": "/seed/cider-05.jpg"
+ },
+ {
+  "name": "Shaping Asymmetrical Neck Ruched One Piece Swimsuit - Black (Cider)",
+  "category": "other",
+  "color": "black",
+  "seasons": [
+   "summer"
+  ],
+  "notes": "Asymmetrical one-shoulder cut with ruched side detailing in solid black.",
+  "image": "/seed/cider-10.jpg"
+ },
+ {
+  "name": "Jersey Barrel Leg Pants - Off White (Uniqlo)",
+  "category": "bottoms",
+  "color": "off white",
+  "seasons": [
+   "all-season"
+  ],
+  "notes": "Wide barrel-leg cut with button closure, belt loops and side pockets in solid off-white.",
+  "image": "/seed/uniqlo-barrel-white-clean.jpg"
+ },
+ {
+  "name": "Jersey Barrel Leg Pants - Black (Uniqlo)",
+  "category": "bottoms",
+  "color": "black",
+  "seasons": [
+   "all-season"
+  ],
+  "notes": "Wide barrel-leg cut with solid black color and button-front waist.",
+  "image": "/seed/uniqlo-barrel-black-clean.jpg"
+ },
+ {
+  "name": "Jersey Barrel Leg Pants - Dark Brown (Uniqlo)",
+  "category": "bottoms",
+  "color": "dark brown",
+  "seasons": [
+   "all-season"
+  ],
+  "notes": "Wide barrel-leg cut in solid dark brown, shown with belt at waist.",
+  "image": "/seed/uniqlo-barrel-brown-clean.jpg"
+ },
+ {
+  "name": "Proxy Dress - Dark Night Navy (Aritzia)",
+  "category": "dresses",
+  "color": "dark navy",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Sleeveless fit-and-flare silhouette with round neckline and solid color.",
+  "image": "/seed/aritzia-proxy-dress-navy-clean.jpg"
+ },
+ {
+  "name": "Oberlin Pant - Light Birch (Aritzia)",
+  "category": "bottoms",
+  "color": "off-white",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Wide-leg cut with elastic waistband and drawstring, solid pattern.",
+  "image": "/seed/aritzia-oberlin-pant-birch-clean.jpg"
+ },
+ {
+  "name": "Bounce Fleece Half-Zip Pullover - Oatmeal Heather (Old Navy)",
+  "category": "tops",
+  "color": "oatmeal heather",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Heathered knit pullover with half-zip collar and ribbed cuffs and hem.",
+  "image": "/seed/oldnavy-halfzip-oatmeal-clean.jpg"
+ },
+ {
+  "name": "Hadley Maxi Dress - Mocha (BRONZE SNAKE)",
+  "category": "dresses",
+  "color": "mocha",
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "notes": "Sleeveless V-neck maxi with tie shoulder straps and vertical black and tan stripes.",
+  "image": "/seed/hadley-maxi-dress-mocha-clean.jpg"
+ },
+ {
+  "name": "Bounce Fleece Wide-Leg Sweatpants - Oatmeal Heather (Old Navy)",
+  "category": "bottoms",
+  "color": "oatmeal heather",
+  "seasons": [
+   "fall",
+   "winter"
+  ],
+  "notes": "Wide-leg cut with elastic waistband and heathered speckled knit.",
+  "image": "/seed/oldnavy-sweatpants-oatmeal-clean.jpg"
+ }
+]

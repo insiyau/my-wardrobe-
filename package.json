@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "next": "^14.2.25",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  },
+  "name": "my-wardrobe-standalone",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "seed": "node scripts/seed.mjs",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node scripts/seed.mjs"
+  },
+  "version": "0.1.0"
+}
