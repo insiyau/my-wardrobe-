@@ -49,15 +49,15 @@ export function OutfitBoard({ avatarPath, pieces }: { avatarPath: string | null;
           </div>
           <div className="row" style={{ marginTop: 12 }}>
             <button className="btn" disabled={aiBusy} onClick={aiPreview}>
-              {aiBusy ? "Generating…" : "✨ AI realistic preview (optional)"}
+              {aiBusy ? "Generating..." : "AI garment-reference preview"}
             </button>
           </div>
           {aiError && <div className="error">{aiError}</div>}
           {aiSkipped && <div className="notice">{aiSkipped}</div>}
           {!aiImage && !aiSkipped && (
             <p className="muted" style={{ marginTop: 8 }}>
-              The board above is instant and uses your real garment photos — no AI involved.
-              The AI preview edits your avatar to wear the outfit (needs an API key, see README).
+              The board above appears instantly from your photos.
+              The AI preview sends your avatar plus the selected garment photos as references and needs an API key.
             </p>
           )}
         </div>

@@ -57,16 +57,7 @@ export default function LooksPage() {
 }
 
 function LookCard({ look, onDelete }: { look: LookWithGarments; onDelete: () => void }) {
-  const [garments, setGarments] = useState<Garment[]>([]);
-  useEffect(() => {
-    if (!look.garment_ids.length) return;
-    fetch("/api/garments")
-      .then((r) => r.json())
-      .then((d) => {
-        const byId = new Map((d.garments as Garment[]).map((g) => [g.id, g]));
-        setGarments(look.garment_ids.map((id) => byId.get(id)).filter(Boolean) as Garment[]);
-      });
-  }, [look.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  const garments = look.garments ?? [];
 
   return (
     <div className="card look-card">

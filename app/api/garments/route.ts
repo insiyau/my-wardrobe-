@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb, rowToGarment } from "@/lib/db";
 import { saveUpload } from "@/lib/images";
-import { CATEGORIES, Category } from "@/lib/types";
+import { boundedString, parseCategory, parseSeasonList } from "@/lib/validation";
 
 export async function GET(req: NextRequest) {
   const db = getDb();
   const { searchParams } = new URL(req.url);
-  const category = searchParams.get("category");
+  const category = parseCategory(searchParams.get("category"));
   const q = searchParams.get("q")?.trim().toLowerCase();
   const where: string[] = [];
-  const params: any[] = [];
-  if (category && (CATEGORIES as string[]).includes(category)) {
+  const params: string[] = [];
+  if (category) {
     where.push("category = ?");
     params.push(category);
   }
@@ -26,21 +26,19 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   const form = await req.formData();
-  const name = String(form.get("name") || "").slice(0, 80);
-  const category = String(form.get("category") || "other") as Category;
-  const color = String(form.get("color") || "").slice(0, 40);
-  const seasons = JSON.parse(String(form.get("seasons") || "[]"));
-  const notes = String(form.get("notes") || "").slice(0, 280);
+  const name = boundedString(form.get("name"), 80);
+  const category = parseCategory(form.get("category")) ?? "other";
+  const color = boundedString(form.get("color"), 40);
+  const seasons = parseSeasonList(form.get("seasons"));
+  const notes = boundedString(form.get("notes"), 280);
   const file = form.get("image");
   if (!name) return NextResponse.json({ error: "Name is required" }, { status: 400 });
-  if (!(CATEGORIES as string[]).includes(category))
-    return NextResponse.json({ error: "Invalid category" }, { status: 400 });
   let image_path: string | null = null;
   if (file instanceof File && file.size > 0) {
     try {
       image_path = await saveUpload(file);
-    } catch (e: any) {
-      return NextResponse.json({ error: e.message }, { status: 400 });
+    } catch (e: unknown) {
+      return NextResponse.json({ error: e instanceof Error ? e.message : "Image upload failed" }, { status: 400 });
     }
   }
   const db = getDb();

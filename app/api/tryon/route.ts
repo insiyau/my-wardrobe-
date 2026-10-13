@@ -1,8 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb, rowToGarment } from "@/lib/db";
+import { parseIdList } from "@/lib/validation";
+import type { Garment } from "@/lib/types";
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+
+const PUBLIC_UPLOADS_DIR = path.join(process.cwd(), "public", "uploads");
+const PUBLIC_SEED_DIR = path.join(process.cwd(), "public", "seed");
+const TRYON_GARMENT_LIMIT = 8;
+
+function publicFilePath(publicPath: string | null): string | null {
+  const fromUploads = publicPath?.startsWith("/uploads/");
+  const fromSeed = publicPath?.startsWith("/seed/");
+  if (!fromUploads && !fromSeed) return null;
+  const prefix = fromUploads ? "/uploads/" : "/seed/";
+  const root = fromUploads ? PUBLIC_UPLOADS_DIR : PUBLIC_SEED_DIR;
+  const fileName = publicPath!.slice(prefix.length);
+  if (!fileName || fileName !== path.basename(fileName)) return null;
+  return `${root}${path.sep}${fileName}`;
+}
+
+function mimeForFile(filePath: string): string {
+  const ext = path.extname(filePath).toLowerCase();
+  if (ext === ".jpg" || ext === ".jpeg") return "image/jpeg";
+  if (ext === ".png") return "image/png";
+  if (ext === ".webp") return "image/webp";
+  if (ext === ".gif") return "image/gif";
+  return "application/octet-stream";
+}
+
+function imageBlob(filePath: string): Blob {
+  return new Blob([fs.readFileSync(/*turbopackIgnore: true*/ filePath)], { type: mimeForFile(filePath) });
+}
 
 /**
  * OPTIONAL AI realistic try-on.
@@ -18,30 +48,50 @@ export async function POST(req: NextRequest) {
       reason: "Set OPENAI_API_KEY to enable AI realistic try-on. The instant outfit board works without it.",
     });
   }
-  const body = await req.json().catch(() => ({}));
-  const garmentIds: number[] = Array.isArray(body.garmentIds) ? body.garmentIds.map(Number).filter(Boolean) : [];
+  const body = (await req.json().catch(() => ({}))) as { garmentIds?: unknown };
+  const garmentIds = parseIdList(body.garmentIds, TRYON_GARMENT_LIMIT);
   if (garmentIds.length === 0) return NextResponse.json({ error: "garmentIds required" }, { status: 400 });
 
   const db = getDb();
-  const avatar: any = db.prepare("SELECT * FROM avatar WHERE id = 1").get();
-  if (!avatar?.image_path) return NextResponse.json({ error: "Set an avatar first" }, { status: 400 });
+  const avatar = db.prepare("SELECT * FROM avatar WHERE id = 1").get() as { image_path?: unknown } | undefined;
+  const avatarPath = typeof avatar?.image_path === "string" ? avatar.image_path : null;
+  if (!avatarPath) return NextResponse.json({ error: "Set an avatar first" }, { status: 400 });
   const garments = db
     .prepare(`SELECT * FROM garments WHERE id IN (${garmentIds.map(() => "?").join(",")})`)
     .all(...garmentIds)
     .map(rowToGarment);
+  if (garments.length !== garmentIds.length) {
+    return NextResponse.json({ error: "One or more garments not found" }, { status: 400 });
+  }
 
-  const avatarFile = path.join(process.cwd(), "public", avatar.image_path.replace(/^\//, ""));
-  if (!fs.existsSync(avatarFile)) return NextResponse.json({ error: "Avatar image file missing" }, { status: 500 });
+  const byId = new Map(garments.map((g) => [g.id, g]));
+  const orderedGarments = garmentIds.map((id) => byId.get(id)).filter((g): g is Garment => Boolean(g));
+  const avatarFile = publicFilePath(avatarPath);
+  if (!avatarFile || !fs.existsSync(/*turbopackIgnore: true*/ avatarFile)) return NextResponse.json({ error: "Avatar image file missing" }, { status: 500 });
+  const garmentFiles = orderedGarments.map((garment) => ({
+    garment,
+    filePath: publicFilePath(garment.image_path),
+  }));
+  if (garmentFiles.some(({ filePath }) => !filePath || !fs.existsSync(/*turbopackIgnore: true*/ filePath))) {
+    return NextResponse.json(
+      { error: "Selected garments need local image files for AI preview" },
+      { status: 400 },
+    );
+  }
 
-  const garmentDesc = garments.map((g) => `${g.color} ${g.name} (${g.notes})`.slice(0, 140)).join("; ");
+  const garmentDesc = orderedGarments.map((g) => `${g.color} ${g.name} (${g.notes})`.slice(0, 140)).join("; ");
   const prompt =
-    `Edit this fashion-doll illustration so she is wearing the following outfit, keeping her face, hair, skin tone, proportions and pose EXACTLY the same — change only the clothing: ${garmentDesc}. ` +
-    `Match each garment's true cut and silhouette (e.g. barrel-leg pants stay barrel-shaped, cropped tops stay cropped). Clean studio background.`;
+    `Use the first image as the avatar and the remaining images as garment references. ` +
+    `Edit this fashion-doll illustration so she is wearing the selected outfit, keeping her face, hair, skin tone, proportions and pose EXACTLY the same. ` +
+    `Change only the clothing: ${garmentDesc}. Match each garment's true color, cut and silhouette. Clean studio background.`;
 
   const form = new FormData();
   form.append("model", process.env.OPENAI_TRYON_MODEL || "gpt-image-1");
   form.append("prompt", prompt);
-  form.append("image", new Blob([fs.readFileSync(avatarFile)]), "avatar.png");
+  form.append("image", imageBlob(avatarFile), path.basename(avatarFile));
+  for (const { garment, filePath } of garmentFiles) {
+    form.append("image", imageBlob(filePath!), `${garment.id}-${path.basename(filePath!)}`);
+  }
 
   const res = await fetch("https://api.openai.com/v1/images/edits", {
     method: "POST",

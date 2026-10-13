@@ -1,6 +1,8 @@
 import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
+import { parseCategory, parseSeasonList } from "./validation";
+import type { Garment } from "./types";
 
 const DB_PATH =
   process.env.WARDROBE_DB_PATH || path.join(process.cwd(), "data", "wardrobe.db");
@@ -55,18 +57,29 @@ export function getDb(): Database.Database {
   return db;
 }
 
-export function rowToGarment(row: any): import("./types").Garment {
-  return {
-    ...row,
-    seasons: safeParse(row.seasons, []),
-    is_favorite: row.is_favorite ? 1 : 0,
-  };
-}
+type GarmentRow = {
+  id?: unknown;
+  name?: unknown;
+  category?: unknown;
+  color?: unknown;
+  seasons?: unknown;
+  notes?: unknown;
+  image_path?: unknown;
+  is_favorite?: unknown;
+  created_at?: unknown;
+};
 
-function safeParse(s: string, fallback: any) {
-  try {
-    return JSON.parse(s ?? "");
-  } catch {
-    return fallback;
-  }
+export function rowToGarment(row: unknown): Garment {
+  const value = (row ?? {}) as GarmentRow;
+  return {
+    id: Number(value.id) || 0,
+    name: typeof value.name === "string" ? value.name : "",
+    category: parseCategory(value.category) ?? "other",
+    color: typeof value.color === "string" ? value.color : "",
+    seasons: parseSeasonList(value.seasons),
+    notes: typeof value.notes === "string" ? value.notes : "",
+    image_path: typeof value.image_path === "string" ? value.image_path : null,
+    is_favorite: value.is_favorite ? 1 : 0,
+    created_at: typeof value.created_at === "string" ? value.created_at : "",
+  };
 }

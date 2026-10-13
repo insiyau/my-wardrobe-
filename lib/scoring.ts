@@ -1,4 +1,4 @@
-import { Garment, Scores, Suggestion } from "./types";
+import type { Garment, Scores, Suggestion } from "./types";
 
 /* ------------------------------------------------------------------ */
 /* Color helpers                                                       */
@@ -29,7 +29,6 @@ function isBright(color: string): boolean {
 
 const DRESSY = ["satin", "leather", "faux leather", "tweed", "embroidery", "ruffle", "cowl", "mermaid", "sequin", "velvet", "patent", "smocked"];
 const CASUAL = ["fleece", "sweatpants", "jersey", "denim", "cargo", "knit", "ribbed", "linen"];
-const FIT_WORDS = ["cropped", "oversized", "wide-leg", "wide leg", "fitted", "slim", "relaxed", "flare", "straight-leg", "straight leg", "barrel", "bodycon", "a-line", "balloon"];
 
 function hasAny(text: string, words: string[]): boolean {
   const t = text.toLowerCase();
@@ -147,8 +146,8 @@ function silhouetteBalance(pieces: Garment[]): number {
   if (topOversized && bottomWide) score -= 12;
   const dresses = pieces.filter((g) => g.category === "dresses").length;
   if (dresses === 1 && pieces.length <= 3) score += 8;
-  if (/fitted/i.test(text) && /fitted/i.test(text) && pieces.length >= 3) score += 4;
-  void FIT_WORDS;
+  const fittedCount = pieces.filter((g) => hasAny(g.name + " " + g.notes, ["fitted", "slim", "skinny", "tailored", "bodycon"])).length;
+  if (fittedCount >= 2 && pieces.length >= 3) score += 4;
   return clamp(Math.round(score));
 }
 
@@ -159,10 +158,12 @@ function styleConsistency(pieces: Garment[]): number {
   if (dressyCount > 0 && casualCount > 0) {
     score -= 14 * Math.min(dressyCount, casualCount);
   }
-  const allSeasons = pieces.flatMap((g) => g.seasons.map((s) => s.toLowerCase()));
-  if (!allSeasons.includes("all-season")) {
-    const seasonSets = pieces.map((g) => new Set(g.seasons.map((s) => s.toLowerCase())));
-    const shared = seasonSets.reduce((a, b) => new Set([...a].filter((x) => b.has(x))));
+  const seasonSets = pieces
+    .map((g) => new Set(g.seasons.map((s) => s.toLowerCase())))
+    .filter((set) => !set.has("all-season"));
+  if (seasonSets.length > 1) {
+    const [first, ...rest] = seasonSets;
+    const shared = rest.reduce((a, b) => new Set([...a].filter((x) => b.has(x))), first);
     if (shared.size === 0) score -= 10;
   }
   return clamp(Math.round(score));

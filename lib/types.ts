@@ -1,14 +1,4 @@
-export type Category =
-  | "tops"
-  | "bottoms"
-  | "dresses"
-  | "outerwear"
-  | "shoes"
-  | "bags"
-  | "accessories"
-  | "other";
-
-export const CATEGORIES: Category[] = [
+export const CATEGORIES = [
   "tops",
   "bottoms",
   "dresses",
@@ -17,14 +7,20 @@ export const CATEGORIES: Category[] = [
   "bags",
   "accessories",
   "other",
-];
+] as const;
+
+export type Category = (typeof CATEGORIES)[number];
+
+export const SEASONS = ["spring", "summer", "fall", "winter", "all-season"] as const;
+
+export type Season = (typeof SEASONS)[number];
 
 export interface Garment {
   id: number;
   name: string;
   category: Category;
   color: string;
-  seasons: string[];
+  seasons: Season[];
   notes: string;
   image_path: string | null;
   is_favorite: number; // 0 | 1

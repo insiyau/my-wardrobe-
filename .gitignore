@@ -1,8 +1,11 @@
 node_modules/
 .next/
+.npm-cache/
+.test-build/
 out/
 *.db
 *.db-journal
+tsconfig.tsbuildinfo
 data/wardrobe.db*
 public/uploads/
 .env
