@@ -10,7 +10,7 @@
     "@types/node": "^20.17.0",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "typescript": "^5.6.3"
+    "typescript": "^7.0.2"
   },
   "name": "my-wardrobe-standalone",
   "private": true,
